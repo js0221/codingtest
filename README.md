@@ -1,7 +1,7 @@
-# 💻 coding-test
+# 💻 coding test
 # Notice
 
-* ### 자료구조, 알고리즘
+* ### Data Structure, Algorithm
 * ### SQL
 
     

@@ -29,7 +29,8 @@ def solution(brown, red):
     for x, y in pair:
         if 2 * (x + y + 2) == brown:
             return [x + 2, y + 2]
-        
+
+
 # solution 4
 def solution(brown, red):
     width = (brown + red) // 3

@@ -12,6 +12,7 @@ def solution(n, words):
     else:
         return 0, 0
     
+    
 # solution 2
 def solution(n, words):
     for i in range(1, len(words)):

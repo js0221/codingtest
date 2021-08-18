@@ -20,9 +20,7 @@ def solution(m, n, infests, vaccinateds):
     queue = [(x - 1, y - 1) for x, y in infests]
     queue = deque(queue)
     while queue:
-
         x, y = queue.popleft()
-
         
         for wx, wy in ways:
             new_x, new_y = x + wx, y + wy 

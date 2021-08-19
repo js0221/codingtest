@@ -11,3 +11,11 @@ def solution(v):
     answer += [key for key, value in Counter(y).items() if value == 1]
 
     return answer
+
+# solution 2
+from collections import Counter
+def solution(v):
+    answer = []
+    for i in zip(*v):
+        answer += [idx for idx, val in Counter(i).items() if val == 1]
+    return answer

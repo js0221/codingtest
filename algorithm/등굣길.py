@@ -20,8 +20,12 @@ def solution(m, n, puddles):
 
 
 # solution 2
-# board[i][j] += 가 아니다. 그래서 (1, 1)인 경우를 따로 처리해야됨
-# 처리를 안하면, (0, 1) + (1, 0) =  0 + 0 = 0이 된다.
+'''
+board[i][j] += 가 아니다. 그래서 (1, 1)인 경우를 따로 처리해야됨
+처리를 안하면, (0, 1) + (1, 0) =  0 + 0 = 0이 된다.
+if문 검사를 하기 떄문에 solution1 보다 효울성이 떨어지긴 함
+'''
+
 def solution(m, n, puddles):
     board = [[0] * (n + 1) for _ in range(m + 1)]
     for x, y in puddles:

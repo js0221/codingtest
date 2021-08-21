@@ -33,7 +33,3 @@ def solution(healths, items):
             answer.append(index)
 
     return sorted(answer)
-
-'''
-
-'''

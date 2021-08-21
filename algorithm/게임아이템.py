@@ -1,7 +1,11 @@
 '''
-1. 체력이 낮은 캐릭터들부터 처리해주자 > 체력순 정렬 : O(n log n)
-2. 아이템들 중에서 조건을 만족하면서 공격력이 가장 센 것을 사용하자 : o(1)
-3. 아이템을 사용했으면 아이템을 삭제해주자 : O(1)
+"나보다 체력이 낮은 캐릭터가 쓸 수 있는 아이템은 나도 쓸 수 있다 https://racoon-blue.tistory.com/10"
+
+1. 체력 낮은 캐릭터 순서 탐색 // 체력순 정렬 : O(n log n)
+2. 체력을 낮추는 아이템이 낮은 아이템 순서로 탐색 // 체력이 높은 캐릭터는 그 아이템을 당연히 쓸 수 있음
+3. 통과하는 아이템들을 따로 모음
+4. 따로 모은 아이템들 중에서 공격력이 가장 센 것을 사용 // o(1)
+5. 아이템을 사용했으면 아이템을 삭제해주자 : O(1)
 '''
 from heapq import heapify, heappush, heappop
 from collections import deque
@@ -31,6 +35,5 @@ def solution(healths, items):
     return sorted(answer)
 
 '''
-나보다 체력이 낮은 캐릭터가 쓸 수 있는 아이템은 나도 쓸 수 있다
-https://racoon-blue.tistory.com/10
+
 '''

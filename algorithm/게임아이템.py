@@ -7,6 +7,13 @@
 4. 따로 모은 아이템들 중에서 공격력이 가장 센 것을 사용 // o(1)
 5. 아이템을 사용했으면 아이템을 삭제해주자 // O(1) // 1로 처리해주기 위해 deque 사용
 '''
+
+'''
+# deque mutated during iteration
+-> for 안에서 pop을 하면, deque가 변경되었다고 나옴
+-> while을 써야 함
+'''
+
 from heapq import heapify, heappush, heappop
 from collections import deque
 def solution(healths, items):
@@ -18,7 +25,7 @@ def solution(healths, items):
     
     for health in healths: # 제일 낮은 체력부터 루프
         
-        while items: # 아이템 루프    
+        while items: # 아이템 루프
             debuff, buff, index = items[0] # 있는 아이템중 가장 낮추는 체력이 낮은 아이템
             
             if health - debuff < 100: # 체력을 낮췄는데 100보다 작음

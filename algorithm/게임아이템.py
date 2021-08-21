@@ -29,3 +29,8 @@ def solution(healths, items):
             answer.append(index)
 
     return sorted(answer)
+
+'''
+나보다 체력이 낮은 캐릭터가 쓸 수 있는 아이템은 나도 쓸 수 있다
+https://racoon-blue.tistory.com/10
+'''

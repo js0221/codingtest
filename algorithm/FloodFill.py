@@ -1,3 +1,4 @@
+# solution 1
 from collections import deque
 def solution(n, m, image):
     # 1. 방문한 노드, 방향 리스트 설정
@@ -44,4 +45,33 @@ def solution(n, m, image):
                         queue.append((px, py))
             answer += 1
 
+    return answer
+
+
+# solution 2
+from collections import deque
+def solution(n, m, image):
+    answer = 0
+    way = [(1, 0), (0, 1), (-1, 0), (0, -1)]
+    board = [[0] * m for _ in range(n)]
+    queue = deque()    
+    
+    for i in range(n):
+        for j in range(m):
+            if board[i][j] == 0:
+                queue.append((i, j))
+                board[i][j] = 1
+                answer += 1
+            
+            while queue:
+                x, y = queue.pop()
+                for wx, wy in way:
+                    new_x, new_y = x + wx, y + wy
+                    
+                    if 0 <= new_x < n and 0 <= new_y < m and image[new_x][new_y] == image[x][y] and board[new_x][new_y] == 0:
+                    # target_color로 따로 변수를 설정 안할 경우 image를 건드리면 안됨
+                    # board[new_x][new_y]를 안하면, 큐에서 new_x, new_y를 검사할 떄, x,y를 또 큐에 넣고 다시 계속 반복됨
+                        queue.append((new_x, new_y))
+                        board[new_x][new_y] = 1
+                    
     return answer
